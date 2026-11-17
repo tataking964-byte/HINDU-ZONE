@@ -79,3 +79,24 @@ footer{padding:20px;color:#bbb}
 </footer>
 </body>
 </html>
+<section id="education" style="display:none;background:#111;color:white;padding:20px;">
+  <h2 style="color:gold;text-align:center;">🕉️ HINDU ZONE EDUCATION</h2>
+
+  <h3>📖 ধর্মীয় শিক্ষা</h3>
+  <div style="display:grid;gap:12px;">
+    <button onclick="showLesson('গীতা')">📚 শ্রীমদ্ভগবদ্গীতা</button>
+    <button onclick="showLesson('মন্ত্র')">🙏 পূজা ও মন্ত্র</button>
+    <button onclick="showLesson('পুরাণ')">📜 পুরাণ ও ইতিহাস</button>
+    <button onclick="showLesson('ধর্ম')">🕉️ হিন্দু ধর্মের জ্ঞান</button>
+    <button onclick="showLesson('কুইজ')">❓ ধর্মীয় কুইজ</button>
+  </div>
+  <div id="lesson" style="margin-top:20px;color:gold;"></div>
+</section>
+
+<script>
+function showLesson(name) {
+  document.getElementById("lesson").innerHTML =
+    "<h3>" + name + "</h3><p>শীঘ্রই এই বিষয়ের পাঠ যোগ করা হবে।</p>";
+}
+</script>
+
