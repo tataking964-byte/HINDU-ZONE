@@ -1,0 +1,17 @@
+
+{
+  "name": "hindu-zone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HINDU ZONE Android App",
+  "scripts": {
+    "build": "mkdir -p www && cp index.html www/index.html"
+  },
+  "dependencies": {
+    "@capacitor/core": "6.2.1",
+    "@capacitor/android": "6.2.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "6.2.1"
+  }
+}
