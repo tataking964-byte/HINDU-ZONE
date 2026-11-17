@@ -13,21 +13,33 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
 
       - name: Install dependencies
         run: npm install
 
+      - name: Install Capacitor
+        run: npm install @capacitor/cli @capacitor/core @capacitor/android
+
+      - name: Add Android platform
+        run: npx cap add android
+
+      - name: Sync Android
+        run: npx cap sync android
+
       - name: Build APK
         run: |
-          npm install @capacitor/cli @capacitor/core @capacitor/android
-          npx cap add android
-          npx cap sync android
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug
