@@ -40,7 +40,47 @@ button{
 }
 footer{padding:20px;color:#bbb}
 </style>
-</head>
+</head><script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA1YcQY2dYdXoB6XVSkSgSM4hMr56DpLbXY",
+  authDomain: "hindu-zone.firebaseapp.com",
+  projectId: "hindu-zone",
+  storageBucket: "hindu-zone.firebasestorage.app",
+  messagingSenderId: "952903513012",
+  appId: "1:952903513012:web:2ec4bc303c00280063b8e1"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.registerUser = async function(email, password) {
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    alert("Registration successful!");
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+window.loginUser = async function(email, password) {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Login successful!");
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+window.logoutUser = () => signOut(auth);
+</script>
 <body>
 <header>
 <div class="logo">🕉️</div>
