@@ -117,7 +117,27 @@ button{
 }
 footer{padding:20px;color:#bbb}
 </style>
-</head>
+</head>// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyA1YcQY2YdXoB6XVSkSgSM4hMr56DpLbXY",
+  authDomain: "hindu-zone.firebaseapp.com",
+  projectId: "hindu-zone",
+  storageBucket: "hindu-zone.firebasestorage.app",
+  messagingSenderId: "952903513012",
+  appId: "1:952903513012:web:2ec4bc303c00280063b8e1",
+  measurementId: "G-GJKCNFJ2MK"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 <body>
 <header>
 <div class="logo">🕉️</div>
@@ -219,4 +239,3 @@ function showLesson(name) {
     "<h3>" + name + "</h3><p>শীঘ্রই এই বিষয়ের পাঠ যোগ করা হবে।</p>";
 }
 </script>
-
