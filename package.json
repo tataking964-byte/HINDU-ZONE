@@ -1,4 +1,3 @@
-
 {
   "name": "hindu-zone",
   "version": "1.0.0",
@@ -8,8 +7,9 @@
     "build": "mkdir -p www && cp index.html www/index.html"
   },
   "dependencies": {
+    "@capacitor/android": "6.2.1",
     "@capacitor/core": "6.2.1",
-    "@capacitor/android": "6.2.1"
+    "firebase-admin": "^14.5.1"
   },
   "devDependencies": {
     "@capacitor/cli": "6.2.1"

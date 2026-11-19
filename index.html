@@ -20,14 +20,14 @@ header{
 }
 .logo{font-size:45px}
 h1{margin:8px;font-size:30px}
-header p{margin:5px}
+hp{margin:5px}
 .container{padding:20px}
 .card{
  background:#2b1b3d;
  padding:20px;
  margin:14px 0;
  border-radius:15px;
- border:1px solid #754a91;
+ pxsolid #754a91;
 }
 .card h2{color:#ffbd42}
 button{
@@ -249,7 +249,35 @@ function showLesson(name) {
   document.getElementById("lesson").innerHTML =
     "<h3>" + name + "</h3><p>শীঘ্রই এই বিষয়ের পাঠ যোগ করা হবে।</p>";
 }
+auth.onAuthStateChanged(async (user) => {
+    const panel = document.getElementById("adminPanel");
+
+      if (!panel) return;
+
+        if (!user) {
+            panel.style.display = "none";
+                return;
+                  }
+
+                    const token = await user.getIdTokenResult(true);
+
+                      if (token.claims.admin === true) {
+                          panel.style.display = "block";
+                            } else {
+                                panel.style.display = "none";
+                                  }
+                                  });
+})
 </script>
+<div id="adminPanel" style="display:none;background:#160d24;color:gold;padding:20px;">
+    <h2>👑 HINDU ZONE ADMIN</h2>
+      <h3>Welcome GOPAL</h3>
+        <p>Admin Dashboard</p>
+          <button onclick="alert('Admin Panel Active')">
+              Admin Test
+                </button>
+                </div>
+
 </body>
 
   <button onclick="registerUser()">Create Account</button>
