@@ -2,167 +2,95 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100606">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
 <title>HINDU ZONE</title>
-
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;background:#080808;color:white;
- font-family:Arial,sans-serif;
-}
-button,input{font:inherit}
-.hero{
- background:linear-gradient(140deg,#350000,#a00000,#350000);
- border-bottom:3px solid #d5a52b;
- padding:30px 15px;text-align:center;
-}
-.logo{font-size:60px}
-.hero h1{color:#ffd700;font-size:clamp(28px,7vw,42px)}
-.hero p{font-size:18px}
-.container{width:94%;max-width:650px;margin:25px auto}
-.panel{
- background:#1b1717;border:1px solid #a98639;
- border-radius:20px;padding:20px;margin-bottom:22px;
-}
-h2{color:#ffd700;text-align:center}
-h3{color:#ffd700}
-input{
- width:100%;padding:15px;margin:10px 0;
- background:#090909;color:white;
- border:1px solid #9b7935;border-radius:12px;
-}
-.btn{
- width:100%;padding:15px;margin:7px 0;
- background:linear-gradient(100deg,#720000,#250909);
- color:white;border:1px solid #b28c40;
- border-radius:13px;font-weight:bold;cursor:pointer;
-}
-.gold-btn{background:linear-gradient(100deg,#d5a000,#8d5500);color:black}
-.lesson-btn{
- display:block;width:100%;padding:20px;margin:12px 0;
- background:linear-gradient(100deg,#570000,#201515);
- color:white;border:1px solid #b28c40;
- border-radius:15px;text-align:left;
- font-size:20px;font-weight:bold;cursor:pointer;
-}
-.lesson-btn:active{background:#8b0000}
-.education-title{text-align:center;color:#ffd700;font-size:28px;line-height:1.5}
-#lesson{
- background:#100b07;border:1px solid #8c692e;
- border-radius:15px;padding:20px;margin-top:25px;
- min-height:100px;line-height:1.9;overflow-wrap:anywhere;
-}
-#lesson h3{color:#ffd700}
-.message{text-align:center;color:#ffd700;overflow-wrap:anywhere}
+body{margin:0;background:#080808;color:white;font-family:Arial,sans-serif}
+header{text-align:center;padding:28px 12px;background:linear-gradient(140deg,#350000,#a00000,#350000);border-bottom:3px solid #d5a52b}
+.logo{font-size:48px}
+h1,h2,h3{color:#ffd700}
+.container{width:94%;max-width:650px;margin:22px auto}
+.panel{background:#1b1717;border:1px solid #a98639;border-radius:16px;padding:18px;margin-bottom:20px}
+input{width:100%;padding:14px;margin:9px 0;background:#090909;color:white;border:1px solid #9b7935;border-radius:10px}
+button{width:100%;padding:14px;margin:7px 0;background:linear-gradient(100deg,#720000,#250909);color:white;border:1px solid #b28c40;border-radius:12px;font-weight:bold;font-size:16px}
+.gold{background:linear-gradient(100deg,#d5a000,#845f00);color:black}
 .hidden{display:none!important}
-.footer{text-align:center;color:#b99a53;padding:25px}
+.lesson-btn{text-align:left;font-size:18px}
+#lesson{background:#100b07;border:1px solid #8c692e;padding:18px;border-radius:12px;margin-top:20px;min-height:100px;white-space:pre-wrap}
+#recaptcha-container{margin:10px 0}
+small{color:#ddd}
 </style>
 </head>
-
 <body>
 
-<header class="hero">
- <div class="logo">🕉️</div>
- <h1>HINDU ZONE</h1>
- <p>সনাতন ধর্মের জ্ঞান ও ভক্তি</p>
+<header>
+<div class="logo">🕉️</div>
+<h1>HINDU ZONE</h1>
+<p>🙏 আমাদের ধর্ম, আমাদের গর্ব 🙏</p>
 </header>
 
 <main class="container">
 
 <section id="login-section" class="panel">
- <h2>🕉️ HINDU ZONE LOGIN</h2>
+<h2>🔐 HINDU ZONE LOGIN</h2>
 
- <h3>Gmail Registration / Login</h3>
- <input id="email" type="email" placeholder="তোমার Gmail">
- <input id="password" type="password" placeholder="Password (কমপক্ষে ৬ অক্ষর)">
+<h3>Gmail Registration / Login</h3>
+<input id="email" type="email" placeholder="তোমার Gmail">
+<input id="password" type="password" placeholder="Password">
 
- <button class="btn gold-btn" id="registerBtn">নতুন Account তৈরি করো</button>
- <button class="btn" id="loginBtn">Login করো</button>
+<button class="gold" id="registerBtn">নতুন Registration</button>
+<button id="loginBtn">Login</button>
 
- <hr style="border-color:#705326;margin:25px 0">
+<hr style="border-color:#705326;margin:22px 0">
 
- <h3>Mobile OTP Login</h3>
- <input id="phone" type="tel" placeholder="+8801XXXXXXXXX">
- <div id="recaptcha-container"></div>
- <button class="btn" id="sendOtpBtn">OTP পাঠাও</button>
- <input id="otp" type="text" inputmode="numeric" placeholder="৬ সংখ্যার OTP">
- <button class="btn gold-btn" id="verifyOtpBtn">OTP Verify ও Login</button>
+<h3>📱 Mobile OTP Login</h3>
+<input id="phone" type="tel" placeholder="+8801XXXXXXXXX">
+<div id="recaptcha-container"></div>
+<button id="sendOtpBtn">OTP পাঠাও</button>
+<input id="otp" type="text" placeholder="৬ সংখ্যার OTP">
+<button id="verifyOtpBtn">OTP Verify ও Login</button>
 
- <p id="message" class="message"></p>
+<p id="auth-message"></p>
 </section>
 
 <section id="user-area" class="panel hidden">
- <h2>🙏 HINDU ZONE সদস্য</h2>
- <p id="userInfo" style="text-align:center"></p>
- <button class="btn" id="logoutBtn">Logout</button>
+<h2>🙏 স্বাগতম HINDU ZONE-এ</h2>
+<p id="user-email"></p>
+<button id="logoutBtn">Logout</button>
 </section>
 
 <section id="education" class="panel hidden">
+<h2 style="text-align:center">🕉️ HINDU ZONE EDUCATION</h2>
+<h3 style="text-align:center">ধর্মীয় শিক্ষা</h3>
 
- <div class="education-title">
-  🕉️ HINDU ZONE<br>EDUCATION
- </div>
+<button class="lesson-btn" data-lesson="গীতা">📖 শ্রীমদ্ভগবদ্গীতা</button>
+<button class="lesson-btn" data-lesson="মন্ত্র">🙏 পূজা ও মন্ত্র</button>
+<button class="lesson-btn" data-lesson="পুরাণ">📚 পুরাণ ও ইতিহাস</button>
+<button class="lesson-btn" data-lesson="ধর্ম">🕉️ হিন্দু ধর্মের জ্ঞান</button>
+<button class="lesson-btn" data-lesson="কুইজ">❓ ধর্মীয় কুইজ</button>
 
- <h2>📖 ধর্মীয় শিক্ষা</h2>
-
- <button type="button" class="lesson-btn" data-lesson="গীতা">
- 📚 শ্রীমদ্ভগবদ্গীতা
- </button>
-
- <button type="button" class="lesson-btn" data-lesson="মন্ত্র">
- 🙏 পূজা ও মন্ত্র
- </button>
-
- <button type="button" class="lesson-btn" data-lesson="পুরাণ">
- 📜 পুরাণ ও ইতিহাস
- </button>
-
- <button type="button" class="lesson-btn" data-lesson="ধর্ম">
- 🕉️ হিন্দু ধর্মের জ্ঞান
- </button>
-
- <button type="button" class="lesson-btn" data-lesson="কুইজ">
- ❓ ধর্মীয় কুইজ
- </button>
-
- <div id="lesson">
-  <h3>🕉️ স্বাগতম</h3>
-  <p>এখান থেকে তোমার পছন্দের পাঠ নির্বাচন করো।</p>
- </div>
+<div id="lesson">উপরের একটি শিক্ষা নির্বাচন করো।</div>
 </section>
 
 <section id="adminPanel" class="panel hidden">
- <h2>👑 HINDU ZONE ADMIN PANEL</h2>
- <p style="text-align:center">স্বাগতম প্রধান Admin GOPAL</p>
- <p style="text-align:center;color:#ffd700">Server Verified Admin</p>
+<h2>👑 ADMIN PANEL</h2>
+<p>Firebase Server থেকে Admin অনুমতি যাচাই হয়েছে।</p>
 </section>
 
 </main>
 
-<footer class="footer">
- 🕉️ HINDU ZONE © 2026
- <p>সনাতন ধর্মের জ্ঞান ও ভক্তি</p>
-</footer>
-
 <script type="module">
-
-import {initializeApp}
+import { initializeApp }
 from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 
 import {
- getAuth,
- createUserWithEmailAndPassword,
- signInWithEmailAndPassword,
- signOut,
- onAuthStateChanged,
- RecaptchaVerifier,
- signInWithPhoneNumber
-}
-from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-
-// FIREBASE CONFIG
+ getAuth, createUserWithEmailAndPassword,
+ signInWithEmailAndPassword, signOut,
+ onAuthStateChanged, RecaptchaVerifier,
+ signInWithPhoneNumber, getIdTokenResult
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
 const firebaseConfig = {
  apiKey: "AIzaSyA1YcQY2YdXoB6XVSkSgSM4hMr56DpLbXY",
@@ -174,264 +102,107 @@ const firebaseConfig = {
  measurementId: "G-GJKCNFJ2MK"
 };
 
-// INITIALIZE
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// ELEMENTS
-
 const $ = id => document.getElementById(id);
+let confirmationResult = null;
+let recaptchaVerifier = null;
 
-const email = $("email");
-const password = $("password");
-const message = $("message");
-const lesson = $("lesson");
-
-function showMessage(text){
- message.textContent = text;
+function message(text){
+ $("auth-message").textContent = text;
 }
 
-// REGISTRATION
-
-$("registerBtn").addEventListener("click",async()=>{
-
- const e=email.value.trim();
- const p=password.value;
-
- if(!e || !p){
-  showMessage("Gmail ও Password লিখো।");
-  return;
- }
-
- if(p.length<6){
-  showMessage("Password কমপক্ষে ৬ অক্ষরের হতে হবে।");
-  return;
- }
-
+$("registerBtn").onclick = async () => {
  try{
-  await createUserWithEmailAndPassword(auth,e,p);
-  showMessage("Registration সফল হয়েছে!");
- }catch(error){
-  showMessage(error.message);
- }
-
-});
-
-// LOGIN
-
-$("loginBtn").addEventListener("click",async()=>{
-
- const e=email.value.trim();
- const p=password.value;
-
- if(!e || !p){
-  showMessage("Gmail ও Password লিখো।");
-  return;
- }
-
- try{
-  await signInWithEmailAndPassword(auth,e,p);
-  showMessage("Login সফল হয়েছে!");
- }catch(error){
-  showMessage(error.message);
- }
-
-});
-
-// LOGOUT
-
-$("logoutBtn").addEventListener("click",async()=>{
-
- try{
-  await signOut(auth);
-  showMessage("Logout সফল হয়েছে!");
- }catch(error){
-  showMessage(error.message);
- }
-
-});
-
-// PHONE OTP
-
-let confirmationResult=null;
-let recaptchaVerifier=null;
-
-async function setupRecaptcha(){
-
- if(recaptchaVerifier){
-  recaptchaVerifier.clear();
- }
-
- recaptchaVerifier=new RecaptchaVerifier(
-  auth,
-  "recaptcha-container",
-  {size:"normal"}
- );
-
- await recaptchaVerifier.render();
- return recaptchaVerifier;
-}
-
-$("sendOtpBtn").addEventListener("click",async()=>{
-
- const phone=$("phone").value.trim();
-
- if(!/^\+[1-9]\d{7,14}$/.test(phone)){
-  showMessage("সঠিক নম্বর দাও। যেমন +8801XXXXXXXXX");
-  return;
- }
-
- try{
-  const verifier=await setupRecaptcha();
-
-  confirmationResult=await signInWithPhoneNumber(
-   auth,phone,verifier
-  );
-
-  showMessage("OTP পাঠানো হয়েছে!");
- }catch(error){
-  console.error(error);
-  showMessage("OTP সমস্যা: "+error.message);
-  if(recaptchaVerifier){
-   recaptchaVerifier.clear();
-   recaptchaVerifier=null;
-  }
- }
-
-});
-
-// VERIFY OTP
-
-$("verifyOtpBtn").addEventListener("click",async()=>{
-
- const code=$("otp").value.trim();
-
- if(!confirmationResult){
-  showMessage("আগে OTP পাঠাও।");
-  return;
- }
-
- if(!/^\d{6}$/.test(code)){
-  showMessage("৬ সংখ্যার OTP লিখো।");
-  return;
- }
-
- try{
-  await confirmationResult.confirm(code);
-  confirmationResult=null;
-  showMessage("Mobile Login সফল হয়েছে!");
- }catch(error){
-  showMessage("OTP ভুল অথবা মেয়াদ শেষ: "+error.message);
- }
-
-});
-
-// EDUCATION LESSONS
-
-const lessons={
-
- "গীতা":
- "শ্রীমদ্ভগবদ্গীতা হিন্দু ধর্মের পবিত্র গ্রন্থ। এতে শ্রীকৃষ্ণ অর্জুনকে কর্ম, জ্ঞান ও ভক্তির শিক্ষা দিয়েছেন।",
-
- "মন্ত্র":
- "মন্ত্র হলো পবিত্র প্রার্থনা। ভক্তি ও শ্রদ্ধার সঙ্গে মন্ত্র জপ করা হয়।",
-
- "পুরাণ":
- "পুরাণে হিন্দু ধর্মের নানা কাহিনি, ঐতিহ্য ও শিক্ষা বর্ণিত হয়েছে।",
-
- "ধর্ম":
- "হিন্দু ধর্মের মূল শিক্ষা হলো সত্য, দয়া, সেবা, ন্যায়, অহিংসা ও পরোপকার। ধর্মীয় জীবন মানুষকে সৎ পথে চলতে এবং সকল জীবের প্রতি সম্মান দেখাতে শেখায়।",
-
- "কুইজ":
- "প্রশ্ন: শ্রীমদ্ভগবদ্গীতায় শ্রীকৃষ্ণ কাকে উপদেশ দিয়েছিলেন? উত্তর: অর্জুনকে।"
-
+  const email = $("email").value.trim();
+  const password = $("password").value;
+  if(!email || password.length < 6)
+   throw new Error("সঠিক Gmail ও কমপক্ষে ৬ অক্ষরের Password দাও।");
+  await createUserWithEmailAndPassword(auth,email,password);
+  message("Registration সফল হয়েছে!");
+ }catch(e){message(e.message);}
 };
 
-function showLesson(name){
+$("loginBtn").onclick = async () => {
+ try{
+  await signInWithEmailAndPassword(
+   auth,$("email").value.trim(),$("password").value
+  );
+  message("Login সফল!");
+ }catch(e){message(e.message);}
+};
 
- if(!auth.currentUser){
-  showMessage("পাঠ দেখতে আগে Login করো।");
-  return;
+$("sendOtpBtn").onclick = async () => {
+ try{
+  const phone = $("phone").value.trim();
+  if(!phone.startsWith("+"))
+   throw new Error("দেশের কোডসহ নম্বর দাও, যেমন +8801XXXXXXXXX");
+
+  if(!recaptchaVerifier){
+   recaptchaVerifier = new RecaptchaVerifier(
+    auth,"recaptcha-container",{}
+   );
+  }
+  confirmationResult = await signInWithPhoneNumber(
+   auth,phone,recaptchaVerifier
+  );
+  message("OTP পাঠানো হয়েছে।");
+ }catch(e){
+  message(e.message);
+  if(recaptchaVerifier){
+   recaptchaVerifier.clear();
+   recaptchaVerifier = null;
+  }
  }
+};
 
- const aliases={
-  "হিন্দু ধর্মের জ্ঞান":"ধর্ম",
-  "পূজা ও মন্ত্র":"মন্ত্র",
-  "পুরাণ ও ইতিহাস":"পুরাণ",
-  "শ্রীমদ্ভগবদ্গীতা":"গীতা",
-  "ধর্মীয় কুইজ":"কুইজ"
- };
+$("verifyOtpBtn").onclick = async () => {
+ try{
+  if(!confirmationResult)
+   throw new Error("আগে OTP পাঠাও।");
+  await confirmationResult.confirm($("otp").value.trim());
+  message("OTP সফলভাবে Verify হয়েছে!");
+ }catch(e){message("OTP ভুল অথবা মেয়াদ শেষ: "+e.message);}
+};
 
- const key=aliases[name]||name;
+$("logoutBtn").onclick = async () => {
+ await signOut(auth);
+ message("Logout হয়েছে।");
+};
 
- const title=document.createElement("h3");
- title.textContent=name;
-
- const content=document.createElement("p");
- content.textContent=lessons[key]||"পাঠ পাওয়া যায়নি।";
-
- lesson.replaceChildren(title,content);
-
- lesson.scrollIntoView({
-  behavior:"smooth",
-  block:"nearest"
- });
-
- showMessage("পাঠ খোলা হয়েছে!");
-}
-
-// ALL LESSON BUTTONS
-
-document.addEventListener("click",event=>{
-
- const button=event.target.closest(".lesson-btn");
-
- if(!button)return;
-
- showLesson(button.dataset.lesson);
-
-});
-
-// AUTH STATE
-
-onAuthStateChanged(auth,async user=>{
-
- if(!user){
-
-  $("login-section").classList.remove("hidden");
-  $("education").classList.add("hidden");
-  $("user-area").classList.add("hidden");
-  $("adminPanel").classList.add("hidden");
-
-  lesson.innerHTML=
-   "<h3>🕉️ স্বাগতম</h3><p>এখান থেকে তোমার পছন্দের পাঠ নির্বাচন করো।</p>";
-
-  return;
- }
-
- $("login-section").classList.add("hidden");
- $("education").classList.remove("hidden");
- $("user-area").classList.remove("hidden");
+onAuthStateChanged(auth, async user => {
+ $("login-section").classList.toggle("hidden",!!user);
+ $("user-area").classList.toggle("hidden",!user);
+ $("education").classList.toggle("hidden",!user);
  $("adminPanel").classList.add("hidden");
 
- $("userInfo").textContent=
-  "Login হয়েছে: "+(user.email||user.phoneNumber||"সদস্য");
-
- try{
-
-  const token=await user.getIdTokenResult(true);
-
-  if(token.claims.admin===true){
-   $("adminPanel").classList.remove("hidden");
+ if(user){
+  $("user-email").textContent = user.email || user.phoneNumber || "সদস্য";
+  try{
+   const token = await getIdTokenResult(user,true);
+   if(token.claims.admin === true){
+    $("adminPanel").classList.remove("hidden");
+   }
+  }catch(e){
+   console.error("Admin verification failed",e);
   }
-
- }catch(error){
-  console.error("Admin verification failed:",error);
  }
-
 });
 
+const lessons = {
+ "গীতা":"শ্রীমদ্ভগবদ্গীতা\n\nগীতা হলো শ্রীকৃষ্ণের দেওয়া জীবন ও কর্মের শিক্ষা।\n\nঅধ্যায় ২: নিজের কর্তব্য পালন করো এবং ফলের প্রতি আসক্ত হয়ো না।",
+ "মন্ত্র":"পূজা ও মন্ত্র\n\nওঁ নমো ভগবতে বাসুদেবায়।\n\nওঁ নমঃ শিবায়।\n\nশ্রদ্ধা ও ভক্তির সঙ্গে প্রার্থনা করো।",
+ "পুরাণ":"পুরাণ ও ইতিহাস\n\nহিন্দু ধর্মে রামায়ণ, মহাভারত ও বিভিন্ন পুরাণের গুরুত্বপূর্ণ শিক্ষা রয়েছে।",
+ "ধর্ম":"হিন্দু ধর্মের জ্ঞান\n\nসত্য, অহিংসা, দয়া, সেবা ও কর্তব্য পালন ধর্মীয় জীবনের গুরুত্বপূর্ণ শিক্ষা।",
+ "কুইজ":"ধর্মীয় কুইজ\n\nপ্রশ্ন: শ্রীমদ্ভগবদ্গীতায় কারা উপদেশ দিয়েছেন?\n\nউত্তর: শ্রীকৃষ্ণ।"
+};
+
+document.addEventListener("click",event=>{
+ const button = event.target.closest(".lesson-btn");
+ if(!button)return;
+ $("lesson").textContent = lessons[button.dataset.lesson] || "শিক্ষা পাওয়া যায়নি।";
+});
 </script>
 </body>
 </html>
